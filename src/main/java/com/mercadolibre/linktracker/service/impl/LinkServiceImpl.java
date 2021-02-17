@@ -1,7 +1,7 @@
 package com.mercadolibre.linktracker.service.impl;
 
-import com.mercadolibre.linktracker.dao.Link;
-import com.mercadolibre.linktracker.dao.Metrics;
+import com.mercadolibre.linktracker.model.Link;
+import com.mercadolibre.linktracker.model.Metrics;
 import com.mercadolibre.linktracker.dto.LinkDTO;
 import com.mercadolibre.linktracker.dto.LinkResponseDTO;
 import com.mercadolibre.linktracker.dto.MetricsDTO;

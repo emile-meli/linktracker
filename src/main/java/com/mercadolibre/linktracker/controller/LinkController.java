@@ -22,20 +22,31 @@ public class LinkController {
         this.linkService = linkService;
     }
 
+    /**
+     * Creates a link with optional password.
+     *
+     *
+     * @param linkDTO
+     * @return linkResponseDTO
+     */
     @PostMapping("/link")
     public LinkResponseDTO createLink(@RequestBody LinkDTO linkDTO){
         return linkService.createLink(linkDTO);
     }
 
-    @GetMapping("link/{id}")
-    public RedirectView redirectLinkNoPass(@PathVariable int id){
-        LinkResponseDTO linkResponseDTO = linkService.getLink(id,"");
-        if(!linkResponseDTO.isValid()) throw new InvalidLink(linkResponseDTO.getUrl());
-        return new RedirectView(linkResponseDTO.getUrl());
-    }
 
-    @GetMapping("link/{id}/{password}")
-    public RedirectView redirectLink(@PathVariable int id, @PathVariable String password){
+    /**
+     * Redirects to the selected link
+     *
+     * @param id Link id
+     * @param password Link password (only if needed)
+     * @return
+     * @throws LinkNotFound if sent id is not found
+     * @throws InvalidPassword if sent password does not match
+     * @throws InvalidLink if link was set to invalid
+     */
+    @GetMapping("link/{id}")
+    public RedirectView redirectLink(@PathVariable int id, @RequestParam(required = false) String password){
         LinkResponseDTO linkResponseDTO = linkService.getLink(id,password);
         if(!linkResponseDTO.isValid()) throw new InvalidLink(linkResponseDTO.getUrl());
         return new RedirectView(linkResponseDTO.getUrl());

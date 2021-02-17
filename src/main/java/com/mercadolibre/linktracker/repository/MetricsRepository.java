@@ -1,6 +1,6 @@
 package com.mercadolibre.linktracker.repository;
 
-import com.mercadolibre.linktracker.dao.Metrics;
+import com.mercadolibre.linktracker.model.Metrics;
 
 public interface MetricsRepository {
 

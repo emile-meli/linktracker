@@ -1,4 +1,4 @@
-package com.mercadolibre.linktracker.dao;
+package com.mercadolibre.linktracker.model;
 
 public class Metrics {
 
