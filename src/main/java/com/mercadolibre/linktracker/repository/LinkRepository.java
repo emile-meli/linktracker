@@ -1,6 +1,6 @@
 package com.mercadolibre.linktracker.repository;
 
-import com.mercadolibre.linktracker.dao.Link;
+import com.mercadolibre.linktracker.model.Link;
 
 public interface LinkRepository {
 

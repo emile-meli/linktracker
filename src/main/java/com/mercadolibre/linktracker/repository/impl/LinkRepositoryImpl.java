@@ -1,6 +1,6 @@
 package com.mercadolibre.linktracker.repository.impl;
 
-import com.mercadolibre.linktracker.dao.Link;
+import com.mercadolibre.linktracker.model.Link;
 import com.mercadolibre.linktracker.repository.LinkRepository;
 import org.springframework.stereotype.Repository;
 
